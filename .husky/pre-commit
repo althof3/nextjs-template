@@ -3,7 +3,7 @@
 
 echo '🏗️👷 formatting and building your project before committing'
 
-npx lint-staged
+npx lint-staged --allow-empty
 
 # Check tsconfig standards
 yarn check-types ||
