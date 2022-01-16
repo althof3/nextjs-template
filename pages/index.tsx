@@ -10,8 +10,10 @@ const Home: NextPage = () => {
         <img src="/logo.svg" className={styles['App-logo']} alt="logo" />
         <Counter />
         <Like />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+        <p style={{ width: '100%', maxWidth: '800px' }}>
+          Try to reload this page.
+          <br /> You will see the same value everytime. <br /> Because the global state is persisted and
+          saved in the localstorage
         </p>
         <span>
           <span>Learn </span>

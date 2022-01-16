@@ -8,7 +8,11 @@ const Like = () => {
   const handleLike = () => dispatch(setLike());
   const handleUnlike = () => dispatch(setUnlike());
 
-  return <div>{isLiked ? <div onClick={handleUnlike}>❤️</div> : <div onClick={handleLike}>❌</div>}</div>;
+  return (
+    <div style={{ background: '#704cb61a', cursor: 'pointer', borderRadius: 8, padding: 2 }}>
+      {isLiked ? <div onClick={handleUnlike}>❤️</div> : <div onClick={handleLike}>❌</div>}
+    </div>
+  );
 };
 
 export default Like;
