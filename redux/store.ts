@@ -18,8 +18,8 @@ const rootConfig = {
   devTools: process.env.NODE_ENV === 'development',
 };
 
-// @ts-ignore
-const makeStore = ({ isServer }) => {
+const makeStore = () => {
+  const isServer = typeof window === 'undefined';
   if (isServer) {
     return configureStore(rootConfig);
   } else {
@@ -35,5 +35,4 @@ export type AppStore = ReturnType<typeof makeStore>;
 export type AppState = ReturnType<AppStore['getState']>;
 export type AppThunk<ReturnType = void> = ThunkAction<ReturnType, AppState, unknown, Action>;
 
-// @ts-ignore
 export const wrapper = createWrapper<AppStore>(makeStore);
